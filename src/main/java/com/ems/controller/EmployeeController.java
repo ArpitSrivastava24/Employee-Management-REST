@@ -16,6 +16,7 @@ public class EmployeeController {
 
     @PostMapping("/create-user")
     public ResponseEntity<EmployeeDto> createEmployee(@RequestBody EmployeeDto employeeDto){
+        System.out.println("User Created");
         return ResponseEntity.ok(employeeService.createEmployee(employeeDto));
     }
 
@@ -39,10 +40,4 @@ public class EmployeeController {
         employeeService.deleteEmployee(id);
         return ResponseEntity.ok("Employee Deleted Successfully");
     }
-
-
-
-
-
-
 }
