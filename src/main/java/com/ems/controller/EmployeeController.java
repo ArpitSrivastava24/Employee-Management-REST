@@ -16,6 +16,7 @@ public class EmployeeController {
 
     @PostMapping("/create-user")
     public ResponseEntity<EmployeeDto> createEmployee(@RequestBody EmployeeDto employeeDto){
+        System.out.println("User Created");
         return ResponseEntity.ok(employeeService.createEmployee(employeeDto));
     }
 
@@ -26,6 +27,7 @@ public class EmployeeController {
 
     @GetMapping("/getAll")
     public ResponseEntity<List<EmployeeDto>> getAllEmployee(){
+        System.out.println("Reflecting all users");
         return ResponseEntity.ok(employeeService.getAllEmployee());
     }
 
@@ -36,13 +38,8 @@ public class EmployeeController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> updateEmployee(@PathVariable Long id){
+        fsfsht
         employeeService.deleteEmployee(id);
         return ResponseEntity.ok("Employee Deleted Successfully");
     }
-
-
-
-
-
-
 }
